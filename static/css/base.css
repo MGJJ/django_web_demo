@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    text-align: center;
+    background-color: #5e5e5e;
+
+}
+.header .bt{
+    display: inline-block;
+    line-height: 50px;
+    background-color: #5e5e5e;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-decoration: none;
+}
+.img{
+    display: inline-block;
+    width: 100%;
+}
+.header span{
+    font-size: large;
+    background-color: #5e5e5e;
+    color: white;
+}
+
+.box .header a:hover {
+    background-color: #3c3c3c;
+}
+.new_box{
+    width: 100%;
+}
+.new_box .head{
+    position: relative;
+    left: 200px;
+    color: orange;
+    width: 1000px;
+}
+.new{
+    display: inline-block;
+    background-color: #fbfff4;
+    width: 1000px;
+    height: 200px;
+    position: relative;
+    left: 200px;
+    top: 10px;
+}
+.new_box .new #new{
+    display: inline-block;
+    margin-right: 120px;
+}
+.new .new_name{
+    position: relative;
+    font-size: 22px;
+    color: #0f0f0f;
+    left: 50px;
+}
+.new .new_detail{
+    position: relative;
+    width: 150px;
+    left: 50px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 5px;
+}
+.new_box  .glyphicon{
+    position: relative;
+    top: 30px;
+    font-size: 30px;
+}
+.cls_box{
+    width: 1200px;
+}
+.cls_box h3{
+    position: relative;
+    left: 200px;
+    top: 10px;
+    color: orange;
+    width: 1000px;
+}
+.cls{
+    position: relative;
+    left: 200px;
+    width: 1000px;
+
+}
+#cls{
+    display: inline-block;
+    width: 300px;
+    height: 180px;
+    position: relative;
+    background-color: #fbfff4;
+    margin: 10px 15px 20px 15px;
+}
+#cls .img-circle{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 125px;
+}
+.cls_name{
+    text-align: center;
+    font-size: 30px;
+    font-family: "Glyphicons Halflings";
+    color: #5e5e5e;
+}
+
+.cls_sum{
+    position: absolute;
+    font-size: 10px;
+    height: 20px;
+}
+.stu_box{
+    display: inline-block;
+    width: 500px;
+}
+.stu_box h3{
+    position: relative;
+    left: 200px;
+    top: 10px;
+    color: orange;
+}
+.stu{
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    left: 200px;
+    width: 500px;
+    height: 280px;
+    background-color: #fcf8e3;
+}
+.stu img{
+    width: 180px;
+    height: 200px;
+    position: relative;
+    top: 15px;
+    left: 15px;
+}
+.stu .stu_name{
+    display: inline-block;
+    position: relative;
+    left: 60px;
+    top: -60px;
+    font-size: 20px;
+    color: #5e5e5e;
+}
+.stu .stu_del{
+    display: inline-block;
+    width: 200px;
+    height: auto;
+    position: relative;
+    left: 15px;
+    top: 10px;
+    color: #0f0f0f;
+    font-size: small;
+}
+.stu .stu_sal{
+    position: relative;
+    left: 50px;
+    top: 25px;
+}
+.stu .stu_com{
+    position: relative;
+    left: 50px;
+    top: 20px;
+}
+.recruit_box{
+    width: 500px;
+    height: 280px;
+    display: inline-block;
+    position: relative;
+    float: right;
+    right: 50px;
+    top: 20px;
+}
+.recruit_box h3{
+    position: relative;
+    color: orange;
+
+}
+.recruit_box .recruit{
+    position: relative;
+    top: 10px;
+}
+#stu_box{
+    position: relative;
+    left: 200px;
+    top: 50px;
+    width: 1000px;
+    height: 260px;
+}
+#stu{
+    display: inline-block;
+    position: relative;
+    margin-right: 40px;
+
+}
+#stu p{
+    text-align: center
+}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block header %}
+<link rel="stylesheet" href={% static "plugs/bxslider-4-4.2.15/src/css/jquery.bxslider.css" %}>
+<link rel="stylesheet" href="{% static "plugs/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+    <div class="img">
+        <ul class="bxsilder" id="bxsilder">
+            <li>
+                <a href="#">
+                    <img style="width: 100%;height: 335px;" src={% static "imag/1.jpg" %}>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img style="width: 100%;height: 335px;" src={% static "imag/2.jpg" %}>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img style="width: 100%;height: 335px;" src={% static "imag/3.jpg" %}>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="new_box">
+        <h3 class="head bg-warning" >| 最新公告</h3>
+            <div class="new">
+                {% for item in new_list %}
+                {% if not item.status %}
+                    <div id="new">
+                        <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                        <p class="new_name" >{{ item.name }}</p>
+                        <p class="new_detail"><a href="#">{{ item.detail }}</a></p>
+                    </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+    </div>
+
+    <div class="cls_box">
+        <h3 class="bg-info">| 课程介绍</h3>
+        <div class="cls">
+            {% for item in coures_list %}
+                {% if not item.status %}
+                    <div id="cls">
+                        <img src="/{{ item.icon }}" class="img-circle">
+                        <p class="cls_name"><a href="#">{{ item.name }}</a></p>
+                        <p class="cls_sum">{{ item.summary }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="stu_box">
+        <h3 class="bg-danger">| 学员就业</h3>
+        <div class="stu">
+            {% for i in stu_list %}
+                {% if not i.status %}
+                    <img  src="/{{ i.img }}">
+                    <p class="stu_name">{{ i.name }}</p>
+                    <p class="stu_del">{{ i.detail }}</p>
+                    <p class="stu_sal"><i class="fa fa-jpy" aria-hidden="true"></i>&nbsp&nbsp{{ i.salary }}</p>
+                    <p class="stu_com"><i class="fa fa-address-book" aria-hidden="true"></i>&nbsp&nbsp{{ i.company }}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="recruit_box">
+        <h3 class="bg-success">| 招聘信息</h3>
+        <div class="recruit">
+            {% for i in recruit_list %}
+                {% if not i.status %}
+                    <p>{{ i.name }}-{{ i.salary }}</p>
+                    <p style="display: inline-block;"><a href="#">详情</a></p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="stu_box">
+            {% for i in stud_list %}
+                {% if not i.status %}
+                    <div id="stu">
+                        <img class="img-thumbnail" style="width: 180px;height: 200px" src="/{{ i.img }}">
+                        <p>{{ i.salary }}</p>
+                        <p>{{ i.company }}</p>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+
+    </div>
+
+<script src={% static "js/jquery-3.3.1.js" %}></script>
+<script src={% static "plugs/bxslider-4-4.2.15/src/js/jquery.bxslider.js" %}></script>
+<script>
+
+    $(document).ready(function () {
+        $('#bxsilder').bxSlider({
+            auto:true
+        });
+    })
+</script>
+{% endblock %}

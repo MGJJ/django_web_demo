@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block header %}
+    <link rel="stylesheet" href="{% static 'css/video.css' %}">
+    <div class="condition">
+        <h3>筛选</h3>
+            <div>
+                {% if kwargs.direction_id == 0 %}
+                    <a class="active" href="/video-0-{{ kwargs.classification_id }}-{{ kwargs.level_id }}.html">全部</a>
+                {% else %}
+                    <a href="/video-0-{{ kwargs.classification_id }}-{{ kwargs.level_id }}.html">全部</a>
+                {% endif %}
+
+                {% for i in direction_list %}
+                    {% if i.id == kwargs.direction_id %}
+                        <a href="/video-{{ i.id }}-{{ kwargs.classification_id }}-{{ kwargs.level_id }}.html" class="active">{{ i.name }}</a>
+                    {% else %}
+                        <a href="/video-{{ i.id }}-{{ kwargs.classification_id }}-{{ kwargs.level_id }}.html">{{ i.name }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div>
+                {% if kwargs.classification_id == 0 %}
+                    <a class="active" href="/video-{{ kwargs.direction_id }}-0-{{ kwargs.level_id }}.html">全部</a>
+                {% else %}
+                    <a href="/video-{{ kwargs.direction_id }}-0-{{ kwargs.level_id }}.html">全部</a>
+                {% endif %}
+
+                {% for i in class_list %}
+                    {% if i.id == kwargs.classification_id %}
+                        <a href="/video-{{ kwargs.direction_id }}-{{ i.id }}-{{ kwargs.level_id }}.html" class="active">{{ i.title }}</a>
+                    {% else %}
+                        <a href="/video-{{ kwargs.direction_id }}-{{ i.id }}-{{ kwargs.level_id }}.html">{{ i.title }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div>
+                {% if kwargs.level_id == 0 %}
+                    <a class="active" href="/video-{{ kwargs.direction_id }}-{{ kwargs.level_id }}-0.html">全部</a>
+                {% else %}
+                    <a href="/video-{{ kwargs.direction_id }}-{{ kwargs.level_id }}-0.html">全部</a>
+                {% endif %}
+                {% for i in level_list %}
+                    {% if i.id == kwargs.level_id %}
+                        <a href="/video-{{ kwargs.direction_id }}-{{ kwargs.classification_id }}-{{ i.id }}.html" class="active">{{ i.name }}</a>
+                    {% else %}
+                        <a href="/video-{{ kwargs.direction_id }}-{{ kwargs.classification_id }}-{{ i.id }}.html">{{ i.name }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        <h3>结果</h3>
+
+
+        {% for i in vi_list %}
+            <div class="video">
+                <a href="{{ i.href }}"><img class="img-thumbnail" src="/{{ i.img }}"></a>
+                <p>{{ i.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block header %}
+    <link rel="stylesheet" href="{% static 'css/student.css' %}">
+    <div class="h">
+        <div class="w"></div>
+        <div class="w"></div>
+        <div class="w"></div>
+        <div class="w"></div>
+    </div>
+    <script src={% static "js/jquery-3.3.1.js" %}></script>
+    <script>
+        $(function () {
+            initImg();
+            scrollEvent();
+        });
+
+        NID = 0;
+        L = 3;
+        function initImg() {
+            $.ajax({
+                url:'/get_stu.html',
+                type:'GET',
+                data:{nid:NID},
+                dataType:'JSON',
+                success:function (arg) {
+                    var stu_list = arg.data;
+                    $.each(stu_list,function (index,value) {
+                        var eqv = (index + L + 1) % 4;
+                        var tag = document.createElement('img');
+                        tag.src = '/' + value.src;
+                        tag.className = 'img-thumbnail';
+                        $('.h').children().eq(eqv).append(tag)
+                        if(index+1 == value.length){
+                            L = eqv;
+                        }
+                    })
+                }
+            })
+        }
+
+        function scrollEvent() {
+            $(window).scroll(function () {
+                var docHeight = $(document).height();
+                var winHeight = $(window).height();
+                var scrollHeight = $(window).scrollTop();
+                if( winHeight + scrollHeight == docHeight){
+                    initImg();
+                }
+            })
+        }
+    </script>
+{% endblock %}

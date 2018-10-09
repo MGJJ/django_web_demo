@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>老男人</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/plugs/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <style>
+        .bto .btn{
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            left: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <a href="/home" class="bt">首页</a>
+            <a href="/teacher.html" class="bt">师资团队</a>
+            <a href="/student.html" class="bt">学员就业</a>
+            <a href="/video-0-0-0.html" class="bt">在线视频</a>
+            <a href="#" class="bt">开源软件</a>
+            <a href="/question.html" class="bt">常见问题</a>
+            <a href="/about.html" class="bt">关于我们</a>
+            <span class="glyphicon glyphicon-earphone" aria-hidden="true" style="position: relative;left: 20px" >101-123</span>
+        </div>
+        {% block header %}{% endblock %}
+    </div>
+    <br>
+    <hr>
+    <div class="bto" style="width: auto;height: 200px;position:relative;bottom:0;"  >
+        <a href="#" class="btn">关于我们 |</a>
+        <a href="#" class="btn">联系我们 |</a>
+        <a href="#" class="btn">招纳贤士 |</a>
+        <a href="#" class="btn">意见反馈 </a>
+    </div>
+</body>
+</html>

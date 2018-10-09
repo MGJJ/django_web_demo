@@ -1,0 +1,11 @@
+.h{
+    width: 1000px;
+    margin: 0 auto;
+}
+.h .w{
+    width: 24%;
+    float: left;
+}
+.w img{
+    width: 100%;
+}

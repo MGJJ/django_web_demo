@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    border: 0;
+}
+
+.condition a{
+    display: inline-block;
+    border: 1px solid #dddddd;
+    padding: 5px 8px;
+    text-decoration: none;
+    margin: 5px 3px;
+}
+.condition .active{
+    background-color: coral;
+    color: white;
+}
+.video{
+    display: inline-block;
+    position: relative;
+    margin: 5px 10px;
+}
+.video img{
+    width: 150px;
+    height: 150px;
+}
+.video p{
+    text-align: center;
+    color: #3c3c3c;
+}

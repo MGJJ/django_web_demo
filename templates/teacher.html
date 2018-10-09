@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block header %}
+    <link rel="stylesheet" href="{% static 'css/teacher.css' %}">
+    <link rel="stylesheet" href="{% static "plugs/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+    <img src="{% static 'imag/4.jpg' %}">
+    <hr>
+    <div>
+        {% for i in tea_list %}
+            {% if not i.status %}
+                <img src="/{{ i.img }}" class="img-circle">
+                <p class="name">{{ i.name }}</p>
+                <p class="sum">{{ i.summary }}</p>
+                <p class="del">{{ i.detail }}</p>
+                <hr>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
